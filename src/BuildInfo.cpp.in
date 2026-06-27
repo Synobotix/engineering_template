@@ -1,0 +1,11 @@
+#include "core/BuildInfo.hpp"
+
+namespace core {
+
+const char* const BuildInfo::project_name = "@PROJECT_NAME@";
+const char* const BuildInfo::version      = "@PROJECT_VERSION@";
+const char* const BuildInfo::git_hash     = "@GIT_HASH@";
+const char* const BuildInfo::build_date   = __DATE__;
+const char* const BuildInfo::build_time   = __TIME__;
+
+} // namespace core
