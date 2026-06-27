@@ -1,0 +1,121 @@
+site_name: Engineering Template
+site_description: Project documentation
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search:
+      lang: en
+
+nav:
+  - Home: index.md
+  - Overview:
+    - Charter & Objectives: overview/charter.md
+    - Stakeholders: overview/stakeholders.md
+    - Glossary: overview/glossary.md
+  - Requirements:
+    - Stakeholder Needs: requirements/stakeholder-needs.md
+    - System Requirements: requirements/system-requirements.md
+    - Software Requirements: requirements/sw-requirements.md
+    - Hardware Requirements: requirements/hw-requirements.md
+    - Constraints: requirements/constraints.md
+    - Traceability Matrix: requirements/traceability-matrix.md
+  - Architecture:
+    - System: architecture/system-architecture.md
+    - Software (arc42 + C4): architecture/sw-architecture.md
+    - Hardware: architecture/hw-architecture.md
+    - Interfaces (ICD):
+      - API: architecture/interfaces/api-contracts.md
+      - Electrical: architecture/interfaces/electrical-icd.md
+      - Mechanical: architecture/interfaces/mechanical-icd.md
+    - Decisions (ADR):
+      - ADR-0001 (template): architecture/decisions/ADR-0001-template.md
+  - Design:
+    - SW Detailed Design: design/sw-detailed-design.md
+    - Data Model: design/data-model.md
+    - HW Schematics: design/hw-schematics.md
+    - PCB: design/pcb-design.md
+    - Mechanical: design/mechanical-design.md
+  - Implementation:
+    - Build & Toolchain: implementation/build-and-toolchain.md
+    - Coding Conventions: implementation/coding-conventions.md
+    - Bill of Materials (BOM): implementation/bom.md
+    - Manufacturing: implementation/manufacturing.md
+  - Verification:
+    - V&V Plan: verification/verification-plan.md
+    - Coverage: verification/coverage.md
+    - HW Bring-Up: verification/hw-bring-up.md
+  - Safety & Compliance:
+    - Hazard Analysis (HARA): safety-compliance/hazard-analysis.md
+    - FMEA: safety-compliance/fmea.md
+    - Safety Concept: safety-compliance/safety-concept.md
+    - Security (STRIDE): safety-compliance/security.md
+    - Normative Compliance: safety-compliance/compliance.md
+  - AI Governance (ISO 42001):
+    - AIMS Overview: ai-management/index.md
+    - Context & Scope: ai-management/context-and-scope.md
+    - Leadership & AI Policy: ai-management/leadership-and-policy.md
+    - AI Risks & Impacts: ai-management/risk-and-impact.md
+    - AI Objectives: ai-management/ai-objectives.md
+    - Support: ai-management/support.md
+    - AI System Lifecycle: ai-management/ai-lifecycle.md
+    - AI Supplier Management: ai-management/supplier-management.md
+    - Performance & Improvement: ai-management/performance-and-improvement.md
+    - Controls (Annex A): ai-management/controls.md
+  - Operations:
+    - Deployment: operations/deployment.md
+    - Runbook: operations/runbook.md
+    - User Manual: operations/user-manual.md
+    - Troubleshooting: operations/troubleshooting.md
+    - Maintenance: operations/maintenance.md
+  - Project:
+    - Project Plan: project/plan.md
+    - Risk Register: project/risk-register.md
+    - Change Management: project/change-management.md
+  - Meta:
+    - Documentation Guide: meta/documentation-guide.md
+    - Versioning: meta/versioning.md
+    - Templates:
+      - ADR: meta/templates/adr-template.md
+      - ICD: meta/templates/icd-template.md
+      - Test Case: meta/templates/test-case-template.md
