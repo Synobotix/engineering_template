@@ -1,0 +1,8 @@
+site/*
+build*/
+MEMORY.md
+.claude/settings.local.json
+# CMake-generated artifacts
+cmake_install.cmake
+src/**/Makefile
+src/Makefile
