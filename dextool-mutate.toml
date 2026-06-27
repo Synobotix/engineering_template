@@ -1,0 +1,34 @@
+# dextool mutate configuration
+# Install: https://github.com/joakim-brannstrom/dextool
+# Usage:
+#   cmake -B build -DENABLE_TESTS=ON
+#   cmake --build build
+#   dextool mutate run --config dextool-mutate.toml
+
+[workarea]
+root = "."
+include = [
+    "src/core",
+    "src/application",
+]
+exclude = []
+
+[compile_commands]
+search_paths = ["build"]
+
+[mutant_test]
+test_cmd_dir = "."
+test_cmd = [
+    "ctest",
+    "--test-dir", "build",
+    "-j", "4",
+    "--output-on-failure",
+]
+test_cmd_timeout = 60
+analyze_using_builtin = ["gtest"]
+
+[coverage]
+use_coverage = false
+
+[report]
+style = "default"
